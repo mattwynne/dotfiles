@@ -1,0 +1,52 @@
+alias h=history
+alias ll='ls -l'
+
+# ruby / rails
+alias migrate='rake db:migrate db:test:prepare'
+alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare'
+alias ss='./script/server'
+alias sc='./script/console'
+alias sb='./script/dbconsole'
+alias sg='./script/generate'
+alias cuc='cucumber'
+alias cuo='cucumber _0.3.11.6_'
+alias spek='spec -c'
+
+# git
+alias g='git'
+alias gadd='git add -u && git add . && git status'
+alias gap='git add -p'
+alias gb='git branch'
+alias gca='git commit --all'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gie='find . \( -type d -empty \) -and \( -not -regex ./\.git.* \) -exec touch {}/.gitignore \;'
+alias gl='git log'
+alias gld='git ls-files --deleted'
+alias glf='git ls-files'
+alias gpl='git pull --rebase && git submodule update'
+alias gra='git ls-files --deleted | xargs git rm'
+alias gsl='git stash list'
+alias gsp='git stash pop'
+alias gst='git status'
+alias gsu='git submodule update --init'
+
+# gitx
+alias gx='gitx'
+alias gxc='gitx -c'
+
+alias e='open -a /Applications/Emacs.app'
+function ne {
+  touch $1
+  e $1
+}
+
+alias a='open -a /Applications/Aquamacs\ Emacs.app'
+function na {
+  touch $1
+  a $1
+}
+
+function stash {
+  git stash save $1
+}

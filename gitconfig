@@ -1,0 +1,16 @@
+[user]
+  name = Matt Johnson
+  email = grillpanda@me.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[alias]
+  st = status
+  co = checkout
+[core]
+  excludesfile = /Users/matt/.gitignore
+[github]
+  user = grillpanda
+  token = 66f3bfadc0ecc9492f714a9d31083a71
