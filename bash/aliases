@@ -1,3 +1,4 @@
+alias ..='cd ..'
 alias h=history
 alias ll='ls -l'
 
@@ -6,7 +7,7 @@ alias migrate='rake db:migrate db:test:prepare'
 alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare'
 alias ss='./script/server'
 alias sc='./script/console'
-alias sb='./script/dbconsole'
+alias sd='./script/dbconsole'
 alias sg='./script/generate'
 alias cuc='cucumber'
 alias cuo='cucumber _0.3.11.6_'
