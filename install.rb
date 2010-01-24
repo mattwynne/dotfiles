@@ -8,7 +8,7 @@ Dir.chdir File.dirname(__FILE__) do
   Dir['*'].each do |file|
     next if file == 'bash' || file == 'install.rb'
 
-    target_name = %w(bin vim).include?(file) ? file : ".#{file}"
+    target_name = %w(bin).include?(file) ? file : ".#{file}"
     target      = File.join(home, target_name)
 
     if File.exist? target
