@@ -14,7 +14,6 @@ alias cuo='cucumber _0.3.11.6_'
 alias spek='spec -c'
 
 # git
-alias g='git'
 alias gadd='git add -u && git add . && git status'
 alias gap='git add -p'
 alias gb='git branch'
@@ -40,6 +39,8 @@ alias gxc='gitx -c'
 alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgt='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
+alias ms='mongod run --config /usr/local/Cellar/mongodb/1.2.0-x86_64/mongod.conf'
+
 alias e='open -a /Applications/Emacs.app'
 function ne {
   touch $1
@@ -55,3 +56,5 @@ function na {
 function stash {
   git stash save $1
 }
+
+alias gitc='git commit -m'
