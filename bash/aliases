@@ -1,4 +1,7 @@
+alias c='clear'
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias h=history
 alias ll='ls -l'
 
@@ -14,10 +17,12 @@ alias cuo='cucumber _0.3.11.6_'
 alias spek='spec -c'
 
 # git
+alias gitc='git commit -m'
 alias gadd='git add -u && git add . && git status'
 alias gap='git add -p'
 alias gb='git branch'
 alias gca='git commit --all'
+alias gco='git checkout'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gie='find . \( -type d -empty \) -and \( -not -regex ./\.git.* \) -exec touch {}/.gitignore \;'
@@ -56,5 +61,3 @@ function na {
 function stash {
   git stash save $1
 }
-
-alias gitc='git commit -m'

@@ -125,3 +125,7 @@ map <Leader>sf :RSfunctionaltest<CR>
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
 map <Leader>nt :NERDTreeToggle<CR>
+
+set ruler
+set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
+
