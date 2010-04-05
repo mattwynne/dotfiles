@@ -1,4 +1,4 @@
-set guifont=Inconsolata:h18.00
+set guifont=Inconsolata:h24.00
 set guioptions-=T " no toolbar
 set guioptions+=c " use console dialogs
 
