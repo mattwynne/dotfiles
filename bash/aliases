@@ -46,18 +46,3 @@ alias pgt='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 alias ms='mongod run --config /usr/local/Cellar/mongodb/1.2.0-x86_64/mongod.conf'
 
-alias e='open -a /Applications/Emacs.app'
-function ne {
-  touch $1
-  e $1
-}
-
-alias a='open -a /Applications/Aquamacs\ Emacs.app'
-function na {
-  touch $1
-  a $1
-}
-
-function stash {
-  git stash save $1
-}
