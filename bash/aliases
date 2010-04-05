@@ -5,6 +5,8 @@ alias ....='cd ../../..'
 alias h=history
 alias ll='ls -l'
 
+alias p='cd ~/projects && ls -l'
+
 # ruby / rails
 alias migrate='rake db:migrate db:test:prepare'
 alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare'
@@ -36,13 +38,15 @@ alias gsp='git stash pop'
 alias gst='git status'
 alias gsu='git submodule update --init'
 
+alias stash='git stash save'
+
 # gitx
 alias gx='gitx'
 alias gxc='gitx -c'
 
-
-alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pgt='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+# mysql
+alias mstart='/usr/local/Cellar/mysql/5.1.45/share/mysql/mysql.server start'
+alias mstop='/usr/local/Cellar/mysql/5.1.45/share/mysql/mysql.server stop'
 
 alias ms='mongod run --config /usr/local/Cellar/mongodb/1.2.0-x86_64/mongod.conf'
 
