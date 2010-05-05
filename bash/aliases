@@ -4,7 +4,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias h=history
 alias ll='ls -l'
-
+alias e=$EDITOR
+alias sbp="source ~/.bash_profile"
+alias ebp="$EDITOR ~/.dotfiles"
 alias p='cd ~/projects && ls -l'
 
 # ruby / rails
@@ -37,7 +39,7 @@ alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gst='git status'
 alias gsu='git submodule update --init'
-
+alias gcm='git commit --verbose'
 alias stash='git stash save'
 
 # gitx
@@ -53,4 +55,3 @@ alias pstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serve
 alias pstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 alias ms='mongod run --config /usr/local/Cellar/mongodb/1.2.4-x86_64/mongod.conf'
-
