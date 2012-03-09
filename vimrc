@@ -7,6 +7,7 @@ set backspace=indent,eol,start
 let mapleader = ","   " Leader
 
 set visualbell        " No bell
+set number
 set nobackup          " Don't keep backup files
 set nowritebackup     " Don't make backups when overwriting files
 set history=50        " Lines of history
