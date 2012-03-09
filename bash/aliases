@@ -8,17 +8,11 @@ alias e=$EDITOR
 alias sbp="source ~/.bash_profile"
 alias ebp="$EDITOR ~/.dotfiles"
 alias p='cd ~/projects && ls -l'
-
-# ruby / rails
-alias migrate='rake db:migrate db:test:prepare'
-alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare'
-alias ss='./script/server'
-alias sc='./script/console'
-alias sd='./script/dbconsole'
-alias sg='./script/generate'
-alias cuc='cucumber'
-alias cuo='cucumber _0.3.11.6_'
-alias spek='spec -c'
+alias vim='mvim -v'
+alias f="fgrep -nR --color=auto"
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # git
 alias gitc='git commit -m'

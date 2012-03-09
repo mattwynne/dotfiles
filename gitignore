@@ -4,3 +4,4 @@
 *.tmproj
 webrat*.html
 *.swp
+.rvmrc

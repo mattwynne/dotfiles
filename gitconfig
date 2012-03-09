@@ -15,8 +15,14 @@
   old = red bold
   new = green bold
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+  added = green
+  changed = yellow
+  untracked = red
 [alias]
   co = checkout
+[github]
+	user = mattwynne
+	token = c8c4d44a9357278ea866c9fdb7c46e35
+[core]
+[core]
+	whitespace = cr-at-eol

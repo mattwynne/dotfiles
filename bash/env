@@ -1,7 +1,11 @@
 export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/local/mongodb/bin:/usr/local/rabbitmq/sbin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
-export EDITOR=mate
-export GIT_EDITOR="mate --wait"
+export EDITOR=vim
+export GIT_EDITOR=vim
 export EVENT_NOKQUEUE=yes
 export HISTCONTROL=ignoredups
+
+export NODE_PATH="/usr/local/lib/node"
+export PATH="/usr/local/share/npm/bin:$PATH"
+export JAVA_HOME=/Library/Java/Home
