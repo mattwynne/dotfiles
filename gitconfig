@@ -20,9 +20,9 @@
   untracked = red
 [alias]
   co = checkout
+  hist = log --pretty=format:\"%C(red)%h%C(reset) %ad | %C(yellow)%s%d%C(reset) %C(green)[%an]%C(reset)\" --graph --date=short
 [github]
 	user = mattwynne
 	token = c8c4d44a9357278ea866c9fdb7c46e35
-[core]
 [core]
 	whitespace = cr-at-eol
