@@ -5,3 +5,4 @@
 webrat*.html
 *.swp
 .rvmrc
+features/.cucumber/stepdefs.json
