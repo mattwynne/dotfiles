@@ -9,3 +9,5 @@ export HISTCONTROL=ignoredups
 export NODE_PATH="/usr/local/lib/node"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export JAVA_HOME=/Library/Java/Home
+
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20.0.1
