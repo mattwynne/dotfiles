@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 " Use Vim setting instead of Vi
 set nocompatible
 
