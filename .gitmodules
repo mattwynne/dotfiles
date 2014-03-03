@@ -1,0 +1,6 @@
+[submodule "vim/bundle/file-line"]
+	path = vim/bundle/file-line
+	url = git@github.com:bogado/file-line.git
+[submodule "vim/bundle/vim-jade"]
+	path = vim/bundle/vim-jade
+	url = git://github.com/digitaltoad/vim-jade.git

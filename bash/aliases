@@ -1,28 +1,18 @@
 alias p='cd ~/projects && ls -l'
 alias vim='mvim -v'
+alias wip='vim ~/Desktop/WIP'
 alias f="fgrep -nR --color=auto"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# ruby
+alias be='bundle exec '
+
 # git
 eval "$(hub alias -s)"
 alias gpl='git pull --rebase && git submodule update && git status'
 alias gst='git status'
-alias gsu='git submodule update --init'
 alias gcm='git commit --verbose'
 alias grr='git reset --hard'
-
-# gitx
-alias gx='gitx'
-alias gxc='gitx -c'
-
-# mysql
-alias mstart='/usr/local/Cellar/mysql/5.1.45/share/mysql/mysql.server start'
-alias mstop='/usr/local/Cellar/mysql/5.1.45/share/mysql/mysql.server stop'
-
-# postgres
-alias pstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-
-alias ms='mongod run --config /usr/local/Cellar/mongodb/1.2.4-x86_64/mongod.conf'
+alias gam='git add . && git commit --amend'
