@@ -4,7 +4,7 @@ alias f="fgrep -nR --color=auto"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ebp='vim ~/.dotfiles'
+alias ebp='pushd ~/.dotfiles && vim . && popd'
 alias sbp='source ~/.bashrc'
 
 # ruby
