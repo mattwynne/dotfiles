@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+filename = ARGV[0]
+VIM_PANE = 0
+
+ESCAPE = "^["
+ENTER = "C-m"
+
+def tell_vim(command)
+  `tmux send-keys -t:#{VIM_PANE} #{command}`
+end
+
+tell_vim ESCAPE
+tell_vim ":e #{filename}"
+tell_vim ENTER
+

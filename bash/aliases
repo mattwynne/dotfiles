@@ -1,10 +1,11 @@
 alias p='cd ~/projects && ls -l'
-alias vim='mvim -v'
 alias wip='vim ~/Desktop/WIP'
 alias f="fgrep -nR --color=auto"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias ebp='vim ~/.dotfiles'
+alias sbp='source ~/.bashrc'
 
 # ruby
 alias be='bundle exec '

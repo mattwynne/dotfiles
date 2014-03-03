@@ -1,0 +1,3 @@
+#!/bin/sh
+
+~/.mux/`pwd`/start-tmux

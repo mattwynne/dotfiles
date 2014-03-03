@@ -1,0 +1,3 @@
+#!/bin/sh
+
+$EDITOR ~/.mux/`pwd`/start-tmux
