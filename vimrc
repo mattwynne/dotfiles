@@ -90,30 +90,6 @@ endif
 " Configure Ctags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
-" Configure FuzzyFinder
-let g:fuzzy_ceiling=50000
-let g:fuzzy_ignore = "*.log" 
-let g:fuzzy_matching_limit = 70
-map <Leader>t :FuzzyFinderTextMate<CR>
-map <Leader>b :FuzzyFinderBuffer<CR>
-
-" Leader shortcuts for Rails commands
-map <Leader>m :Rmodel<CR>
-map <Leader>c :Rcontroller<CR>
-map <Leader>v :Rview<CR>
-map <Leader>u :Runittest<CR>
-map <Leader>f :Rfunctionaltest<CR>
-map <Leader>tm :RTmodel<CR>
-map <Leader>tc :RTcontroller<CR>
-map <Leader>tv :RTview<CR>
-map <Leader>tu :RTunittest<CR>
-map <Leader>tf :RTfunctionaltest<CR>
-map <Leader>sm :RSmodel<CR>
-map <Leader>sc :RScontroller<CR>
-map <Leader>sv :RSview<CR>
-map <Leader>su :RSunittest<CR>
-map <Leader>sf :RSfunctionaltest<CR>
-
 " NERDTree
 map <Leader>nt :NERDTreeToggle<CR>
 
@@ -160,3 +136,98 @@ endfunction
 vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
 vnoremap <silent> gv :call VisualSearch('gv')<CR>
+
+
+set background=dark
+colorscheme solarized
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RUNNING TESTS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>t :call RunTestFile()<cr>
+map <leader>T :call RunNearestTest()<cr>
+map <leader><space> :call ReRunTestCommand()<cr>
+
+function! RunTestFile(...)
+    if a:0
+        let command_suffix = a:1
+    else
+        let command_suffix = ""
+    endif
+
+    " Run the tests for the previously-marked file.
+    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
+    if in_test_file
+        call SetTestFile()
+    elseif !exists("t:grb_test_file")
+        return
+    end
+    call RunTests(t:grb_test_file . command_suffix)
+endfunction
+
+function! RunNearestTest()
+    let spec_line_number = line('.')
+    if match(expand("%"), '_test\.rb$') != -1
+      call RunTestFile() " line number not right for minitest - TODO: Find nearest test name?
+    else
+      call RunTestFile(":" . spec_line_number)
+    end
+endfunction
+
+function! SetTestFile()
+    " Set the spec file that tests will be run for.
+    let t:grb_test_file=@%
+endfunction
+
+function! RunTests(filename)
+    " Write the file and run tests for the given filename
+    :w
+    if match(a:filename, '\.feature') != -1
+        if filereadable("script/features")
+            let run_test = "script/features " . a:filename
+        else
+            let run_test = "bundle exec cucumber --color -f pretty " . a:filename
+        end
+    elseif match(a:filename, '_spec\.rb') != -1
+        if filereadable("script/test")
+            let run_test = "script/test " . a:filename
+        else
+            let run_test = "bundle exec rspec --color " . a:filename
+        end
+    else
+        if filereadable("script/test")
+            let run_test = "script/test " . a:filename
+        else
+            let run_test = "bundle exec ruby " . a:filename
+        end
+    end
+    call RunTestCommand(run_test)
+endfunction
+
+function! RunTestCommand(cmd)
+    if match(a:cmd, '.') != -1
+      let t:sst_test_command = a:cmd
+    end
+    exec ":w"
+    " check for a test-commands pipe, and execute tests async
+    if filewritable(".test-commands")
+      exec ":silent !echo " . t:sst_test_command . " > .test-commands"
+
+      redraw!
+    else
+      exec ":!clear;" . t:sst_test_command
+    end
+endfunction
+
+function! ReRunTestCommand()
+  call RunTestCommand("")
+endfunction
+
+" https://github.com/scrooloose/nerdtree/issues/386
+aunmenu Help.
+let no_buffers_menu=1
+
+" swap buffer
+nnoremap <leader>, :b#<CR>
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
